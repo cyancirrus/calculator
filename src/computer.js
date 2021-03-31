@@ -1,4 +1,5 @@
 import React from 'react'
+import {Segment, Grid, Label} from 'semantic-ui-less/semantic.less'
 
 function arrayContains(arr, elem) {
     return arr.indexOf(elem) !== -1
@@ -59,15 +60,13 @@ class CalculatorInput extends React.Component {
         const calculatorField = this.props.calculatorField;
         const calculatorFieldName = this.props.calculatorFieldName;
         return (
-            <fieldset>
-                <legend>
-                    Enter input for {calculatorFieldName}
-                </legend>
-                <input
-                    value={calculatorField}
-                    onChange={this.handleChange}
-                />
-            </fieldset>
+                <div class="ui input focus">
+                    <input 
+                        type="text" 
+                        placeholder={calculatorFieldName}
+                        onChange={this.handleChange}
+                    />
+                </div>
         );
     }
 }
@@ -84,7 +83,6 @@ export default class Computer extends React.Component {
             operator:''
         }
     }
-
     handleBaseNumber(e) {
         this.setState({baseNumber: e});
     }
@@ -95,30 +93,35 @@ export default class Computer extends React.Component {
     handleOperator(o) {
         this.setState({operator: o});
     }
-
     render() {
         const baseNumber = this.state.baseNumber
         const auxNumber = this.state.auxNumber
         const operator = this.state.operator
         const output = tryCompute(baseNumber, auxNumber, operator)
         return (
-            <div>
-                <CalculatorInput
+            <div class="ui centered grid">
+                <div class="column">
+                    <CalculatorInput
                     calculatorFieldName='baseNumber'
                     calculatorField={baseNumber}
                     onCalculatorChange={this.handleBaseNumber}
-                />
-                <CalculatorInput
-                    calculatorFieldName='auxNumber'
-                    calculatorField={auxNumber}
-                    onCalculatorChange={this.handleAuxNumber}
-                />
-                <CalculatorInput
-                    calculatorFieldName='operator'
-                    calculatorField={operator}
-                    onCalculatorChange={this.handleOperator}
-                />
-            {output}
+                    />
+                </div>
+                <div class="column">    
+                    <CalculatorInput
+                        calculatorFieldName='auxNumber'
+                        calculatorField={auxNumber}
+                        onCalculatorChange={this.handleAuxNumber}
+                    />
+                </div>
+                <div class="column">
+                    <CalculatorInput
+                        calculatorFieldName='operator'
+                        calculatorField={operator}
+                        onCalculatorChange={this.handleOperator}
+                    />
+                    {output}
+                </div>
             </div>
         );
     }
