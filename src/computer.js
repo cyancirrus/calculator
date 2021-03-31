@@ -1,5 +1,4 @@
 import React from 'react'
-import {Segment, Grid, Label} from 'semantic-ui-less/semantic.less'
 
 function arrayContains(arr, elem) {
     return arr.indexOf(elem) !== -1
@@ -46,6 +45,7 @@ function tryCompute(x, y, operator) {
     if (validation) {
         return compute(xInput, yInput, operator);
     }
+    return ''
 }
 
 class CalculatorInput extends React.Component {
@@ -60,13 +60,13 @@ class CalculatorInput extends React.Component {
         const calculatorField = this.props.calculatorField;
         const calculatorFieldName = this.props.calculatorFieldName;
         return (
-                <div class="ui input focus">
-                    <input 
-                        type="text" 
-                        placeholder={calculatorFieldName}
-                        onChange={this.handleChange}
-                    />
-                </div>
+            <div class="ui input focus">
+                <input 
+                    type="text" 
+                    placeholder={calculatorFieldName}
+                    onChange={this.handleChange}
+                />
+            </div>
         );
     }
 }
@@ -99,7 +99,7 @@ export default class Computer extends React.Component {
         const operator = this.state.operator
         const output = tryCompute(baseNumber, auxNumber, operator)
         return (
-            <div class="ui centered grid">
+            <div class="ui equal width center alligned four column grid">
                 <div class="column">
                     <CalculatorInput
                     calculatorFieldName='baseNumber'
@@ -120,7 +120,11 @@ export default class Computer extends React.Component {
                         calculatorField={operator}
                         onCalculatorChange={this.handleOperator}
                     />
-                    {output}
+                </div>
+                <div class="column">
+                    <button>
+                        {output}
+                    </button>
                 </div>
             </div>
         );

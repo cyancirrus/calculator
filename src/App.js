@@ -1,12 +1,12 @@
 import './App.css';
 import Computer from './computer'
 import ContainerExampleContainer from './visual'
-import ImageExampleImage from './images'
+import WebsiteHeader from './images'
 
 function App() {
   return (
     <div>
-      <ImageExampleImage />
+      <WebsiteHeader />
       <ContainerExampleContainer />
       <Computer />
     </div>
