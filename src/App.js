@@ -1,14 +1,10 @@
 import './App.css';
-import Computer from './computer'
-import ContainerExampleContainer from './visual'
-import WebsiteHeader from './images'
+import WebsiteMetaStructure from './ws_structure/structure'
 
 function App() {
   return (
     <div>
-      <WebsiteHeader />
-      <ContainerExampleContainer />
-      <Computer />
+      <WebsiteMetaStructure />
     </div>
   );
 }
