@@ -4,10 +4,15 @@ import { Image, Container } from 'semantic-ui-react'
 import WebsiteBody from '../ws_computation/body'
 
 
-
 const ImageExampleImage = () => (
   <Image src='./assets/images/astolfo.jpg' size="tiny" />
 )
+
+
+function BlackContainers() {
+
+}
+
 
 function WebsiteMenu() {
   return (
@@ -33,7 +38,7 @@ function WebsiteMenu() {
 
 function WebsiteTop() {
   return (
-  <Container>
+  <Container id="website-top" bgcolor="black">
     <div class="ui text container">
       <h1 class="ui inverted header">
         Welcome to Autumn's Playground
@@ -46,7 +51,7 @@ function WebsiteTop() {
 
 function WebsiteLogo() {
   return (
-  <Container>
+  <Container color="black">
     <div class="ui center alligned padded grid">
       <div class="columns">
       {ImageExampleImage()}       
@@ -56,22 +61,25 @@ function WebsiteLogo() {
       </div>
     </div>
   </Container>
-  
   );
 }
 
 function WebsiteMetaStructure() {
-  return (
-      <Container>
-        <div>
+  const site = (
+    <Container id="yes">
+        <div id="what">
           {WebsiteTop()}
+          {BlackContainers()}
           {WebsiteLogo()}
           {WebsiteMenu()}
         </div>
-        <body>
-          <Computer />
-        </body>
-      </Container>
+      <body>
+        <Computer />
+      </body>
+    </Container>
+    )
+  return (
+    site
   );
 }
 

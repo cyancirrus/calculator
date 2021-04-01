@@ -4,3 +4,4 @@
 
 @primaryColor: #F2BCEB;
 @pageBackground: #F6EAF4;
+@containerColor: #111111;
