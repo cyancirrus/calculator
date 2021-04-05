@@ -4,9 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'semantic-ui-less/semantic.less'
+import { HashRouter, Route } from 'react-router-dom';
+import { Router } from 'react-router';
+import routes from './ws_structure/routes';
 
 ReactDOM.render(
-    <App />,
+  routes,
   document.getElementById('root')
 );
 
