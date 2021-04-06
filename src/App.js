@@ -1,7 +1,5 @@
-import { render } from '@testing-library/react';
 import React from 'react';
 import './App.css';
-import WebsiteMetaStructure from './ws_structure/structure'
 import { Link } from 'react-router-dom';
 
 class App extends React.Component {
@@ -13,30 +11,18 @@ class App extends React.Component {
           <main>
             {this.props.children}
           </main>
-            <Link to="what">hello beeeeeee</Link>
-        </div>
+            <button class="ui button">
+              <Link to="/home">home</Link>
+            </button>
+            <button class="ui button">
+              <Link to="calculator">calculator</Link>
+            </button>
+            <button class="ui button">
+              <Link to="blog">blog</Link>
+            </button>
+          </div>
     );
   };
 }
-
-// class App extends React.Component {
-//   render() {
-//     return (
-//       <div>
-//         <header>
-//           this is my website!
-//         </header>
-
-//         <main>
-//           {this.props.children}
-//         </main>
-
-//         <fotter>
-//           your copywrite message
-//         </fotter>
-//       </div>
-//     )
-//   }
-// }
 
 export default App;
