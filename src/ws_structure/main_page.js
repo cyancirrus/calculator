@@ -47,7 +47,7 @@ const LandingPage = () => (
                         </div>    
                         <div class="ui hidden divider"/>
                         <div>
-                            hello i'm i hope you're doing well
+                            hello i hope you're doing well
                             <LandingPageGreeting thoughts={thoughts}/>
                         </div>
                         <div class="ui hidden divider" size="large"/>

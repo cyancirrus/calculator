@@ -7,26 +7,12 @@ const ImageExampleImage = () => (
   <Image src='./assets/images/astolfo.jpg' size="tiny" />
 )
 
-function WebsiteTop() {
-  return (
-    <div class="ui text container">
-      <h1 class="ui inverted header">
-        Welcome to Autumn's Playground
-      </h1>
-      <h2>a place to explore and have fun O.O</h2>
-    </div>
-  );
-}
-
 function WebsiteLogo() {
   return (
   <Container color="black">
     <div class="ui center alligned padded grid">
       <div class="columns">
       {ImageExampleImage()}       
-      </div>
-      <div class="columns">
-        hello!
       </div>
     </div>
   </Container>
@@ -35,16 +21,23 @@ function WebsiteLogo() {
 
 function WebsiteMetaStructure() {
   const site = (
-    <Container id="yes">
-        <div id="what">
-          {WebsiteTop()}
-          {WebsiteLogo()}
-          {WebsiteBody()}
+  <div class="ui segment" style={{
+          backgroundColor:"#80474F",
+          color:'#3F1118'
+      }
+  }>
+      <div class="ui equal width center alligned two column grid">
+        <div class="column">
+            <Image src='./assets/images/astolfo.jpg'/>
         </div>
-      <body>
-        <Computer />
-      </body>
-    </Container>
+        <div class="column">
+            <div class="centered grid">
+            {WebsiteBody()}
+            </div>
+            <Computer />
+        </div>
+      </div>
+      </div>
     )
   return (
     site
